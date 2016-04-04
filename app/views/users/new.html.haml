@@ -1,0 +1,11 @@
+= simple_form_for @user do |f| 
+  = f.input :name
+  = f.input :email
+  %br
+  = f.simple_fields_for :addresses do |address|
+    = address.input :street
+    = address.input :city
+    = address.input :state
+    = address.input :zip
+  = f.button :submit, "Send Message", :class => 'btn btn-primary btn-block'
+

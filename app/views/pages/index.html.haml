@@ -1,0 +1,15 @@
+%table{width: '100%'}
+  %tr
+    %td id
+    %td email
+    %td name
+    %td Address
+    %td
+      = link_to new_user_path do
+        New
+  - users.each do |user|
+    %tr
+      %td= user.id
+      %td= user.email
+      %td= user.name
+      %td= user.addresses.first.try(:formatted_address)
